@@ -24,6 +24,6 @@ jobs:
         working-directory: backend
         run: pip install -r requirements.txt
 
-      - name: Linting
+      - name: Run lint.sh
         working-directory: backend
         run: ./scripts/lint.sh
