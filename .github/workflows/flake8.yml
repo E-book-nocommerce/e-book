@@ -26,4 +26,4 @@ jobs:
 
       - name: Run lint.sh
         working-directory: backend
-        run: ./scripts/lint.sh
+        run: bash scripts/lint.sh
