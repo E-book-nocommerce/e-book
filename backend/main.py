@@ -3,28 +3,10 @@ from fastapi import FastAPI
 app = FastAPI()
 
 
-@app.get("/")
+@app.get('/')
 def read_root():
     res = 'Hello world!'
     return {"message": res}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @app.get("/items/{item_id}")
