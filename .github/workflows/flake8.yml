@@ -1,4 +1,4 @@
-name: Lint Backend Code
+name: Lint and Type Check
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  lint:
+  lint-and-type-check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -21,11 +21,18 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        working-directory: backend
         run: |
-          pip install -r requirements.txt
-          pip install flake8
+          pip install -r backend/requirements.txt
+          pip install flake8 mypy isort
 
-      - name: Run lint.sh script
+      - name: Run flake8
         working-directory: backend
-        run: ./scripts/lint.sh
+        run: flake8 . --config=setup.cfg
+
+      - name: Run mypy
+        working-directory: backend
+        run: mypy --config-file=setup.cfg .
+
+      - name: Run isort
+        working-directory: backend
+        run: isort --check --diff --config=setup.cfg .
