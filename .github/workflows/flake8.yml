@@ -21,18 +21,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install -r backend/requirements.txt
-          pip install flake8 mypy isort mypy-django-plugin
-
-      - name: Run flake8
         working-directory: backend
-        run: flake8 . --config=setup.cfg
+        run: pip install -r requirements.txt
 
-      - name: Run mypy
+      - name: Linting
         working-directory: backend
-        run: mypy --config-file=setup.cfg .
-
-      - name: Run isort
-        working-directory: backend
-        run: isort --check --diff --config=setup.cfg .
+        run: .scripts/lint.sh
