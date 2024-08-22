@@ -26,4 +26,4 @@ jobs:
 
       - name: Linting
         working-directory: backend
-        run: .scripts/lint.sh
+        run: ./scripts/lint.sh
