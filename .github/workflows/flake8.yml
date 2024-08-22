@@ -26,7 +26,13 @@ jobs:
           pip install -r requirements.txt
           pip install flake8
 
-      - name: Run flake8
+      - name: List files in backend directory
         working-directory: backend
-        run: flake8 .
+        run: ls -la
 
+      - name: Display current directory
+        run: pwd
+
+      - name: Run lint.sh script
+        working-directory: backend
+        run: ./scripts/lint.sh
