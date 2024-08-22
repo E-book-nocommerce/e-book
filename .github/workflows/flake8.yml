@@ -28,4 +28,5 @@ jobs:
 
       - name: Run flake8
         working-directory: backend
-        run: flake8 . --verbose
+        run: flake8 .
+
