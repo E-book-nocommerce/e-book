@@ -10,10 +10,5 @@ def read_root():
 
 
 @app.get('/items/{item_id}')
-def read_item(item_id: int, stroka: str = None):
-    return {"item_id": item_id, 'q': stroka}
-
-
-@app.get("/is/{item_id}")
-def read_it(item_id: int, stroka: str = None):
-    return {"item_id": item_id, 'q': stroka}
+def read_item(item_id: int, input_string: str = None):
+    return {'item_id': item_id, 'q': input_string}
