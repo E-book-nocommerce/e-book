@@ -9,9 +9,11 @@ def read_root():
     return {'message': res}
 
 
-
-
-
 @app.get('/items/{item_id}')
 def read_item(item_id: int, stroka: str = None):
+    return {"item_id": item_id, 'q': stroka}
+
+
+@app.get("/is/{item_id}")
+def read_it(item_id: int, stroka: str = None):
     return {"item_id": item_id, 'q': stroka}
