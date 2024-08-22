@@ -3,10 +3,10 @@ name: Lint Backend Code
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main
   pull_request:
     branches:
-      - main  # or your default branch
+      - main
 
 jobs:
   lint:
@@ -18,12 +18,14 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: '3.11'  # specify your Python version
+          python-version: '3.11'
 
       - name: Install dependencies
+        working-directory: backend
         run: |
-          pip install -r backend/requirements.txt
+          pip install -r requirements.txt
           pip install flake8
 
       - name: Run flake8
-        run: flake8 backend
+        working-directory: backend
+        run: flake8 . --verbose
