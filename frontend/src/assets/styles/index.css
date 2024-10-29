@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+    min-height: 100%;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
+    right: auto;
+    left: 0;
+    top: 50%;
+    transform: translate3d(0px, -50%, 0);
+}
+
+
+input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    position: absolute;
+    z-index: 30;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    height: 10px;
+    width: 100%;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    height: 5px;
+}
+
+input[type='range']::-moz-range-track {
+    -moz-appearance: none;
+    height: 5px;
+}
+
+input[type='range']::-ms-track {
+    appearance: none;
+    height: 5px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    background-color: #937DC2;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-top: -10px;
+}
+
+input[type='range']::-moz-range-thumb {
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    background-color: #937DC2;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-top: -10px;
+}
+
+
+input[type='range']::-ms-thumb {
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    background-color: #937DC2;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    margin-top: -10px;
+}
+
+
+
+input[type='range']:active::-webkit-slider-thumb {
+    background-color: #FFFFFF;
+    border: 3px solid #937DC2;
+}
+
+input[type='range']:active::-moz-range-thumb {
+    background-color: #FFFFFF;
+    border: 3px solid #937DC2;
+}
+
+
+input[type='range']:active::-ms-thumb {
+    background-color: #FFFFFF;
+    border: 3px solid #937DC2;
+}
+

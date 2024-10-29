@@ -2,10 +2,9 @@ import logging
 from contextlib import contextmanager
 from typing import ContextManager
 
+from app.config import DATABASE_URL
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, scoped_session, sessionmaker
-
-from app.config import DATABASE_URL
 
 logger = logging.getLogger(__name__)
 

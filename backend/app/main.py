@@ -1,3 +1,4 @@
+from app.api.controllers import author, book, publisher
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -12,3 +13,8 @@ def read_root():
 @app.get('/items/{item_id}')
 def read_item(item_id: int, input_string: str = None):
     return {'item_id': item_id, 'q': input_string}
+
+
+app.include_router(author.router)
+app.include_router(book.router)
+app.include_router(publisher.router)
